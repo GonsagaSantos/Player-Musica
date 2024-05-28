@@ -1,0 +1,97 @@
+
+body {
+    background: linear-gradient(
+        rgb(9, 153, 189),
+        rgb(1, 91, 167) /*Insere um gradiente entre as duas cores colocadas*/
+    );
+    height: 100vh; /*Altura*/
+    color: white;
+    font-family: sans-serif; /*Fonte do site*/
+    display: flex;  
+    flex-direction: column; /*Impõe que a direção da div seja em coluna.*/
+    align-items: center;
+}
+
+button {
+    background-color: inherit;
+    color: white;
+    border: none;
+}
+
+#below-cover{
+    display: flex;
+    flex-direction: row; /*Impõe que a direção da div seja em linha.*/
+    justify-content: space-between; /*Põe um espaço entre a div do texto e o icon, afinal são divisões diferentes.*/
+    align-items: center; /*Alinha a DIV centralmente, autoexplicativo.*/
+    margin: 3em 0 1em 0;
+}
+
+#button-container{
+    display: flex;
+    flex-direction: row; /*é o padrão, o comando não muda absolutamente nada nesse caso*/
+    justify-content: space-between; /*põe um espaço envolta dos elementos*/
+    align-items: center;
+}
+
+.button {
+    font-size: 1.5em; /*Isso quer dizer que você quer a fonte duas vezes o tamanho da fonte do site*/
+    cursor: pointer; /*Muda o cursor para ficar mais intuitivo*/
+}
+
+.button-navigate {
+    font-size: 3em;
+}
+
+.button-biggest {
+    font-size: 4em;
+}
+
+#cover {
+    width: 450px;
+    border-radius: 10%;    
+}
+
+#playlist-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0 4em 0;
+}
+
+#song-name {
+    font-size: 1.5em;
+    font-weight: bolder; /*Faz com que a fonte fique mais "pesada"*/
+    color: white;
+}
+
+#artist-name {
+    font-size: 15px;    
+}
+
+.light-color {
+    color: rgb(139, 153, 156);
+}
+
+#progress-bar {
+    background-color: rgb(139, 153, 156); /*Muda a cor da DIV inteira*/
+    height: 5px; /*Altura*/
+    width: 100%; /*Largura em relação ao tamanho da DIV que está no body*/
+    margin: 5% 0 5% 0;
+}
+
+#progress-container {
+    padding-bottom: 1em;
+    cursor: pointer;
+}
+
+#current-progress {
+    --progress: 0%; /*Aqui nós temos uma variável no CSS, ou seja, a propriedade de estilo é mutável de acordo com o processo correspondente feito no JS*/
+    height: inherit; /*Faz com que essa DIV herde as propriedades do "pai", que no caso é a DIV progress-bar*/
+    border-radius: inherit;
+    background-color: white;
+    width: var(--progress);/*Declara a variável na propriedade que irá ser mudada*/
+}
+
+#button-active {
+    color: rgb(0, 78, 39);
+}

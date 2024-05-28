@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Searcher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/style.css"> <!--fazendo com que o html "conheça" o css-->
+</head>
+
+<body>
+<div id="music-container">
+    <h1 id="playlist-title">Playlist Gonsaga</h1>
+    <img id="cover" src="images/nevermind.jpg" alt="Cover">
+    <audio id="audio" src="/nevermind/Nirvana - Come As You Are.mp3" alt="song"></audio>
+
+    <div id="below-cover">
+        <div id="song-info"> <!--A div está separada entre o texto e o icon-->
+            <div id="song-name">nome da música</div>
+            <div id="artist-name" class="light-color">nome da banda</div>
+        </div>
+        <button id="like" class="button light-color" title="like"><i class="bi bi-heart"></i></button>
+    </div>
+
+    <div id="progress-container">
+        <div id="progress-bar">
+            <div id="current-progress"> </div>
+        </div>
+    </div>
+
+   <button-container>
+    <div id="button-container"> <!--enquanto o ID guarda somente 1 valor, a class pode conter duas-->
+        <button id="shuffle" class="button" title="shuffle"> <i class="bi bi-shuffle"></i> </button>
+        <button id="previous" class="button button-navigate" title="previous"> <i class="bi bi-skip-start"></i> </button> <!--Um elemento pode ter mais de uma classe-->
+        <button id="play" class="button button-biggest" title="play"> <i class="bi bi-play-circle-fill"></i> </button>
+        <button id="next" class="button button-navigate" title="skip"> <i class="bi bi-skip-end"></i> </button>
+        <button id="repeat" class="button" title="repeat"> <i class="bi bi-repeat"></i> </button>
+    </div>
+   </button-container>
+    
+    <script src="/script.js"></script>
+
+</div>
+</body>
+</html>
+
+
