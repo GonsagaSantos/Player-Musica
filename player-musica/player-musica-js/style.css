@@ -13,7 +13,7 @@ body {
 }
 
 button {
-    background-color: inherit;
+    background-color: inherit; /*Ele está herdando o background color do elemento pai, que no caso é o body */
     color: white;
     border: none;
 }
@@ -76,11 +76,10 @@ button {
     background-color: rgb(139, 153, 156); /*Muda a cor da DIV inteira*/
     height: 5px; /*Altura*/
     width: 100%; /*Largura em relação ao tamanho da DIV que está no body*/
-    margin: 5% 0 5% 0;
+    margin: 5% 0 2% 0;
 }
 
 #progress-container {
-    padding-bottom: 1em;
     cursor: pointer;
 }
 
@@ -92,6 +91,21 @@ button {
     width: var(--progress);/*Declara a variável na propriedade que irá ser mudada*/
 }
 
+#song-time {
+    font-size: x-small;
+}
+
+#song-duration {
+    font-size: x-small;
+}
+
 #button-active {
     color: rgb(0, 78, 39);
+}
+
+#time-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
 }

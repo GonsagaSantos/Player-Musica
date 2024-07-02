@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soul Searcher</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/style.css"> <!--fazendo com que o html "conheça" o css-->
+    <link rel="stylesheet" href="/player-musica/player-musica-js/style.css"> <!--fazendo com que o html "conheça" o css-->
 </head>
 
 <body>
 <div id="music-container">
-    <h1 id="playlist-title">Playlist Gonsaga</h1>
-    <img id="cover" src="images/nevermind.jpg" alt="Cover">
-    <audio id="audio" src="/nevermind/Nirvana - Come As You Are.mp3" alt="song"></audio>
+    <h1 id="playlist-title">Player</h1>
+    <img id="cover" src="/images/nevermind.jpg" alt="Cover">
+    <audio id="audio" src="/songs/nevermind.mp3" alt="song"></audio>
 
     <div id="below-cover">
         <div id="song-info"> <!--A div está separada entre o texto e o icon-->
@@ -26,6 +26,10 @@
         <div id="progress-bar">
             <div id="current-progress"> </div>
         </div>
+        <div id="time-box">
+            <div id="playing-time">00:00</div>
+            <div id="total-time">00:00</div>
+        </div>
     </div>
 
    <button-container>
@@ -38,7 +42,7 @@
     </div>
    </button-container>
     
-    <script src="/script.js"></script>
+    <script src="/player-musica/player-musica-js/script.js"></script>
 
 </div>
 </body>
