@@ -12,27 +12,31 @@ const repeat = document.getElementById("repeat");
 const like = document.getElementById("like");
 const totalTime = document.getElementById("total-time");
 const playingTime = document.getElementById("playing-time");
+const displayNextSong = document.getElementById("display-next-song");
 
 const Nirvana = {
-    songName : "Come As You Are",
-    artist : "Nirvana",
-    file : "nevermind",
-    liked: false
-}
+        songName : "Come As You Are",
+        artist : "Nirvana",
+        file : "nevermind",
+        backgroundColor: "nirvanaBackground",
+        liked: false
+    }
 
 const ArthurVerocai = {
-    songName : "Dedicada a Ela",
-    artist : "Arthur Verocai",
-    file : "arthurverocai",
-    liked: false
-}
+        songName : "Dedicada a Ela",
+        artist : "Arthur Verocai",
+        file : "arthurverocai",
+        backgroundColor: "verocaiBackground",
+        liked: false
+    }
 
 const Deftones = {
-    songName : "Changes",
-    artist : "Deftones",
-    file : "whitepony",
-    liked: false
-}
+        songName : "Changes",
+        artist : "Deftones",
+        file : "whitepony",
+        backgroundColor: "deftonesBackground",
+        liked: false
+    }
 
 let isPlaying = false;
 let isShuffled = false; 
@@ -63,7 +67,7 @@ function PlayDecider() {
     }
 }
 
- function likeButtonRender(){
+function likeButtonRender(){
     if(sortedPlaylist[index].liked === false){ 
         like.querySelector(".bi").classList.remove("bi-heart");
         like.querySelector(".bi").classList.add("bi-heart-fill");
@@ -77,6 +81,7 @@ function PlayDecider() {
 }
 
 function initializeSong(){
+    document.body.className = sortedPlaylist[index].backgroundColor;
     cover.src = `../../images/${sortedPlaylist[index].file}.jpg`;
     song.src = `../../songs/${sortedPlaylist[index].file}.mp3`;
     songName.innerText = sortedPlaylist[index].songName;
@@ -104,13 +109,22 @@ function nextSong() {
     playsong();
 }
 
+function updateDisplayNextSong() {
+    if(index === 2){
+       displayNextSong.innerText = `Próxima: ${sortedPlaylist[0].songName} - ${sortedPlaylist[0].artist}.`;
+    }
+    else {
+        displayNextSong.innerText = `Próxima: ${sortedPlaylist[index + 1].songName} - ${sortedPlaylist[index + 1].artist}.`;
+    }
+}
+
 function updateProgressBar(){
     const barWidth = (song.currentTime / song.duration) * 100;
     currentProgress.style.setProperty("--progress", `${barWidth}%`);
 }
 
 function jumpTo(event){
-    const width = progressContainer.clientWidth;
+    const width = progressContainer.clientWidth;        
     const clickPosition = event.offsetX;
     const jumpToTime = (clickPosition / width) * song.duration;
     song.currentTime = jumpToTime;
@@ -204,6 +218,7 @@ song.addEventListener("timeupdate", updateProgressBar);
 song.addEventListener("timeupdate", updateCurrentTime);
 song.addEventListener("ended", nextOrRepeat);
 song.addEventListener("loadedmetadata", updateTotalTime);
+song.addEventListener("loadedmetadata", updateDisplayNextSong);
 progressContainer.addEventListener("click", jumpTo);
 shuffle.addEventListener("click", shuffleClicked);
 repeat.addEventListener("click", repeatButtonClicked);

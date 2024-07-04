@@ -1,15 +1,35 @@
-
 body {
-    background: linear-gradient(
-        rgb(9, 153, 189),
-        rgb(1, 91, 167) /*Insere um gradiente entre as duas cores colocadas*/
-    );
     height: 100vh; /*Altura*/
     color: white;
-    font-family: sans-serif; /*Fonte do site*/
+    font-family: circular-black; /*Fonte do site sans-serif*/
     display: flex;  
     flex-direction: column; /*Impõe que a direção da div seja em coluna.*/
     align-items: center;
+}
+
+#display-next-song {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.nirvanaBackground {
+    background: linear-gradient(
+        to bottom,
+        rgb(9, 153, 189),
+        rgb(1, 91, 167) /*Insere um gradiente entre as duas cores colocadas*/
+    );
+}
+
+.verocaiBackground {
+    background: linear-gradient(
+        to bottom,
+        rgb(232, 214, 186),
+        rgb(107, 100, 67) /*Insere um gradiente entre as duas cores colocadas*/
+    );
+}
+
+.deftonesBackground {
+    background: rgb(75, 75, 75);
 }
 
 button {
